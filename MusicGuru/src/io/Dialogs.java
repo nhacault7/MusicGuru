@@ -460,8 +460,4 @@ public class Dialogs
         scrollPane.setBorder(null);
     }
 
-    
-
-    
-    
 }

@@ -1,14 +1,38 @@
 package ui;
 
 import collections.LinkedList;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 /**
  *
  * @author Rickolas-PC
  */
 public class SetupUI extends javax.swing.JFrame {
+    
+    final private String wholeNote = "Whole Note";
+    final private String halfNote = "Half Note";
+    final private String quarterNote = "Quarter Note";
+    final private String eighthNote = "Eighth Note";
+    final private String sixteenthNote = "Sixteenth Note";
+    final private String thirtysecondNote = "Thirty-Second Note";
+    final private double wholeNoteNum = 4;
+    final private double halfNoteNum = 2;
+    final private double quarterNoteNum = 1;
+    final private double eighthNoteNum = 0.5;
+    final private double sixteenthNoteNum = 0.25;
+    final private double thirtysecondNoteNum = 0.125;
+    
+    final private String wholeRest = "Whole Rest";
+    final private String halfRest = "Half Rest";
+    final private String quarterRest = "Quarter Rest";
+    final private String eighthRest = "Eighth Rest";
+    final private String sixteenthRest = "Sixteenth Rest";
+    final private String thirtysecondRest = "Thirty-Second Rest";
+    final private double wholeRestNum = 4;
+    final private double halfRestNum = 2;
+    final private double quarterRestNum = 1;
+    final private double eighthRestNum = 0.5;
+    final private double sixteenthRestNum = 0.25;
+    final private double thirtysecondRestNum = 0.125;
     
     private SetupUIController controller;
     
@@ -23,7 +47,12 @@ public class SetupUI extends javax.swing.JFrame {
         initComponents();
         controller = new SetupUIController(displaySheets, tabSetup, 
                 lblSetupSheet, txtMessureNum, txtMessureBeats, txtTempo, 
-                btnSSNext, this);
+                btnSSNext, btnTrebleIntCon, btnTrebleWholeNote, btnTrebleHalfNote, 
+                btnTrebleQuarterNote, btnTrebleEighthNote, btnTrebleSixteenthNote, 
+                btnTrebleThirtysecondNote, btnTrebleWholeRest, btnTrebleHalfRest, btnTrebleQuarterRest, 
+                btnTrebleEighthRest, btnTrebleSixteenthRest, btnTrebleThirtysecondRest, 
+                cmbTrebleNote, cmbTrebleOctave, chkTrebleTriplet, chkTrebleInterval, 
+                btnTrebleNext, lstSoundInfo, this);
     }
 
     /**
@@ -47,48 +76,47 @@ public class SetupUI extends javax.swing.JFrame {
         txtTempo = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jButton4 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        btnTrebleWholeNote = new javax.swing.JButton();
+        btnTrebleHalfNote = new javax.swing.JButton();
+        btnTrebleQuarterNote = new javax.swing.JButton();
+        btnTrebleEighthNote = new javax.swing.JButton();
+        btnTrebleSixteenthNote = new javax.swing.JButton();
+        btnTrebleThirtysecondNote = new javax.swing.JButton();
+        chkTrebleTriplet = new javax.swing.JCheckBox();
+        cmbTrebleNote = new javax.swing.JComboBox<>();
+        chkTrebleInterval = new javax.swing.JCheckBox();
+        btnTrebleIntCon = new javax.swing.JButton();
+        cmbTrebleOctave = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jButton35 = new javax.swing.JButton();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jPanel11 = new javax.swing.JPanel();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        btnTrebleWholeRest = new javax.swing.JButton();
+        btnTrebleHalfRest = new javax.swing.JButton();
+        btnTrebleQuarterRest = new javax.swing.JButton();
+        btnTrebleEighthRest = new javax.swing.JButton();
+        btnTrebleSixteenthRest = new javax.swing.JButton();
+        btnTrebleThirtysecondRest = new javax.swing.JButton();
+        btnTrebleNext = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        btnBaseWholeNote = new javax.swing.JButton();
+        btnBaseHalfNote = new javax.swing.JButton();
+        btnBaseQuarterNote = new javax.swing.JButton();
+        btnBaseEighthNote = new javax.swing.JButton();
+        btnBaseSixteenthNote = new javax.swing.JButton();
+        btnBaseThirtysecondNote = new javax.swing.JButton();
+        chkBaseTriplet = new javax.swing.JCheckBox();
+        cmbBaseNote = new javax.swing.JComboBox<>();
+        chkBaseInterval = new javax.swing.JCheckBox();
+        btnBaseIntCon = new javax.swing.JButton();
+        cmbBaseOctave = new javax.swing.JComboBox<>();
+        jPanel10 = new javax.swing.JPanel();
+        btnWholeRest1 = new javax.swing.JButton();
+        btnHalfRest1 = new javax.swing.JButton();
+        btnQuarterRest1 = new javax.swing.JButton();
+        btnEighthRest1 = new javax.swing.JButton();
+        btnSixteenthRest1 = new javax.swing.JButton();
+        btnThirtysecondRest1 = new javax.swing.JButton();
+        btnBaseNext = new javax.swing.JButton();
+        lstSoundInfo = new java.awt.List();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -185,7 +213,7 @@ public class SetupUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addComponent(btnSSNext)
                 .addContainerGap())
         );
@@ -196,27 +224,69 @@ public class SetupUI extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Notes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
-        jButton5.setText("Whole Note");
+        btnTrebleWholeNote.setText("Whole Note");
+        btnTrebleWholeNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleWholeNoteActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Half Note");
+        btnTrebleHalfNote.setText("Half Note");
+        btnTrebleHalfNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleHalfNoteActionPerformed(evt);
+            }
+        });
 
-        jButton7.setText("Quarter Note");
+        btnTrebleQuarterNote.setText("Quarter Note");
+        btnTrebleQuarterNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleQuarterNoteActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("Eighth Note");
+        btnTrebleEighthNote.setText("Eighth Note");
+        btnTrebleEighthNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleEighthNoteActionPerformed(evt);
+            }
+        });
 
-        jButton13.setText("Sixteenth Note");
+        btnTrebleSixteenthNote.setText("Sixteenth Note");
+        btnTrebleSixteenthNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleSixteenthNoteActionPerformed(evt);
+            }
+        });
 
-        jButton14.setText("Thirty-Second Note");
+        btnTrebleThirtysecondNote.setText("Thirty-Second Note");
+        btnTrebleThirtysecondNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleThirtysecondNoteActionPerformed(evt);
+            }
+        });
 
-        jCheckBox1.setText("Triplet");
+        chkTrebleTriplet.setText("Triplet");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
+        cmbTrebleNote.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
+        cmbTrebleNote.setBorder(javax.swing.BorderFactory.createTitledBorder("Note"));
 
-        jCheckBox3.setText("Interval");
+        chkTrebleInterval.setText("Interval");
+        chkTrebleInterval.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chkTrebleIntervalStateChanged(evt);
+            }
+        });
 
-        jButton4.setText("Confirm");
+        btnTrebleIntCon.setText("Confirm");
+        btnTrebleIntCon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleIntConActionPerformed(evt);
+            }
+        });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Octave 0", "Octave 1", "Octave 2", "Octave 3", "Octave 4", "Octave 5", "Octave 6", "Octave 7", "Octave 8", "Octave 9" }));
+        cmbTrebleOctave.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }));
+        cmbTrebleOctave.setBorder(javax.swing.BorderFactory.createTitledBorder("Octave"));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -227,63 +297,96 @@ public class SetupUI extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnTrebleWholeNote, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(btnTrebleEighthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnTrebleHalfNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnTrebleSixteenthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btnTrebleThirtysecondNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnTrebleQuarterNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbTrebleNote, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox3)
+                        .addComponent(cmbTrebleOctave, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)))
+                        .addComponent(chkTrebleTriplet)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chkTrebleInterval)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnTrebleIntCon)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton6)
-                    .addComponent(jButton5))
+                    .addComponent(btnTrebleQuarterNote)
+                    .addComponent(btnTrebleHalfNote)
+                    .addComponent(btnTrebleWholeNote))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton13)
-                    .addComponent(jButton14)
-                    .addComponent(jButton8))
+                    .addComponent(btnTrebleSixteenthNote)
+                    .addComponent(btnTrebleThirtysecondNote)
+                    .addComponent(btnTrebleEighthNote))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jButton4)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbTrebleOctave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkTrebleTriplet)
+                            .addComponent(chkTrebleInterval)
+                            .addComponent(btnTrebleIntCon)))
+                    .addComponent(cmbTrebleNote, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rests", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
-        jButton15.setText("Whole Rest");
+        btnTrebleWholeRest.setText("Whole Rest");
+        btnTrebleWholeRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleWholeRestActionPerformed(evt);
+            }
+        });
 
-        jButton16.setText("Half Rest");
+        btnTrebleHalfRest.setText("Half Rest");
+        btnTrebleHalfRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleHalfRestActionPerformed(evt);
+            }
+        });
 
-        jButton17.setText("Quarter Rest");
+        btnTrebleQuarterRest.setText("Quarter Rest");
+        btnTrebleQuarterRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleQuarterRestActionPerformed(evt);
+            }
+        });
 
-        jButton18.setText("Eighth Rest");
+        btnTrebleEighthRest.setText("Eighth Rest");
+        btnTrebleEighthRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleEighthRestActionPerformed(evt);
+            }
+        });
 
-        jButton19.setText("Sixteenth Rest");
+        btnTrebleSixteenthRest.setText("Sixteenth Rest");
+        btnTrebleSixteenthRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleSixteenthRestActionPerformed(evt);
+            }
+        });
 
-        jButton20.setText("Thirty-Second Rest");
+        btnTrebleThirtysecondRest.setText("Thirty-Second Rest");
+        btnTrebleThirtysecondRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleThirtysecondRestActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -292,34 +395,40 @@ public class SetupUI extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnTrebleWholeRest, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(btnTrebleEighthRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnTrebleHalfRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTrebleSixteenthRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnTrebleThirtysecondRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTrebleQuarterRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton17)
-                    .addComponent(jButton16)
-                    .addComponent(jButton15))
+                    .addComponent(btnTrebleQuarterRest)
+                    .addComponent(btnTrebleHalfRest)
+                    .addComponent(btnTrebleWholeRest))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton19)
-                    .addComponent(jButton20)
-                    .addComponent(jButton18))
+                    .addComponent(btnTrebleSixteenthRest)
+                    .addComponent(btnTrebleThirtysecondRest)
+                    .addComponent(btnTrebleEighthRest))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Next");
+        btnTrebleNext.setText("Next");
+        btnTrebleNext.setEnabled(false);
+        btnTrebleNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrebleNextActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -328,192 +437,268 @@ public class SetupUI extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnTrebleNext)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTrebleNext)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabSetup.addTab("Treble Clef", jPanel4);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Notes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Notes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
-        jButton9.setText("Whole Note");
+        btnBaseWholeNote.setText("Whole Note");
+        btnBaseWholeNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseWholeNoteActionPerformed(evt);
+            }
+        });
 
-        jButton10.setText("Half Note");
+        btnBaseHalfNote.setText("Half Note");
+        btnBaseHalfNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseHalfNoteActionPerformed(evt);
+            }
+        });
 
-        jButton11.setText("Quarter Note");
+        btnBaseQuarterNote.setText("Quarter Note");
+        btnBaseQuarterNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseQuarterNoteActionPerformed(evt);
+            }
+        });
 
-        jButton12.setText("Eighth Note");
+        btnBaseEighthNote.setText("Eighth Note");
+        btnBaseEighthNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseEighthNoteActionPerformed(evt);
+            }
+        });
 
-        jButton33.setText("Sixteenth Note");
+        btnBaseSixteenthNote.setText("Sixteenth Note");
+        btnBaseSixteenthNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseSixteenthNoteActionPerformed(evt);
+            }
+        });
 
-        jButton34.setText("Thirty-Second Note");
+        btnBaseThirtysecondNote.setText("Thirty-Second Note");
+        btnBaseThirtysecondNote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseThirtysecondNoteActionPerformed(evt);
+            }
+        });
 
-        jCheckBox4.setText("Triplet");
+        chkBaseTriplet.setText("Triplet");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
+        cmbBaseNote.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
+        cmbBaseNote.setBorder(javax.swing.BorderFactory.createTitledBorder("Note"));
 
-        jCheckBox5.setText("interval");
+        chkBaseInterval.setText("Interval");
+        chkBaseInterval.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chkBaseIntervalStateChanged(evt);
+            }
+        });
 
-        jButton35.setText("Confirm");
+        btnBaseIntCon.setText("Confirm");
+        btnBaseIntCon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseIntConActionPerformed(evt);
+            }
+        });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Octave 0", "Octave 1", "Octave 2", "Octave 3", "Octave 4", "Octave 5", "Octave 6", "Octave 7", "Octave 8", "Octave 9" }));
+        cmbBaseOctave.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }));
+        cmbBaseOctave.setBorder(javax.swing.BorderFactory.createTitledBorder("Octave"));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnBaseWholeNote, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(btnBaseEighthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnBaseHalfNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBaseSixteenthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnBaseThirtysecondNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBaseQuarterNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(cmbBaseNote, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox5)
+                        .addComponent(cmbBaseOctave, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton35)))
+                        .addComponent(chkBaseTriplet)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chkBaseInterval)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBaseIntCon)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jButton10)
-                    .addComponent(jButton9))
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBaseQuarterNote)
+                    .addComponent(btnBaseHalfNote)
+                    .addComponent(btnBaseWholeNote))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton33)
-                    .addComponent(jButton34)
-                    .addComponent(jButton12))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBaseSixteenthNote)
+                    .addComponent(btnBaseThirtysecondNote)
+                    .addComponent(btnBaseEighthNote))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jButton35)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rests", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
-
-        jButton36.setText("Whole Rest");
-
-        jButton37.setText("Half Rest");
-
-        jButton38.setText("Quarter Rest");
-
-        jButton39.setText("Eighth Rest");
-
-        jButton40.setText("Sixteenth Rest");
-
-        jButton41.setText("Thirty-Second Rest");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton36, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addComponent(jButton39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton38)
-                    .addComponent(jButton37)
-                    .addComponent(jButton36))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton40)
-                    .addComponent(jButton41)
-                    .addComponent(jButton39))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jButton2.setText("Next");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbBaseOctave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkBaseTriplet)
+                            .addComponent(chkBaseInterval)
+                            .addComponent(btnBaseIntCon)))
+                    .addComponent(cmbBaseNote, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rests", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
+
+        btnWholeRest1.setText("Whole Rest");
+        btnWholeRest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWholeRest1ActionPerformed(evt);
+            }
+        });
+
+        btnHalfRest1.setText("Half Rest");
+        btnHalfRest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHalfRest1ActionPerformed(evt);
+            }
+        });
+
+        btnQuarterRest1.setText("Quarter Rest");
+        btnQuarterRest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuarterRest1ActionPerformed(evt);
+            }
+        });
+
+        btnEighthRest1.setText("Eighth Rest");
+        btnEighthRest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEighthRest1ActionPerformed(evt);
+            }
+        });
+
+        btnSixteenthRest1.setText("Sixteenth Rest");
+        btnSixteenthRest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSixteenthRest1ActionPerformed(evt);
+            }
+        });
+
+        btnThirtysecondRest1.setText("Thirty-Second Rest");
+        btnThirtysecondRest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThirtysecondRest1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnWholeRest1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(btnEighthRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnHalfRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSixteenthRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnThirtysecondRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnQuarterRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnQuarterRest1)
+                    .addComponent(btnHalfRest1)
+                    .addComponent(btnWholeRest1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSixteenthRest1)
+                    .addComponent(btnThirtysecondRest1)
+                    .addComponent(btnEighthRest1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tabSetup.addTab("Base Clef", jPanel5);
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        btnBaseNext.setText("Next");
+        btnBaseNext.setEnabled(false);
+        btnBaseNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaseNextActionPerformed(evt);
+            }
         });
-        jScrollPane1.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBaseNext)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBaseNext)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tabSetup.addTab("Base Clef", jPanel8);
+
+        lstSoundInfo.setName(""); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -523,7 +708,7 @@ public class SetupUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tabSetup, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lstSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblSetupSheet, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -535,10 +720,9 @@ public class SetupUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSetupSheet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tabSetup, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 157, Short.MAX_VALUE)))
+                        .addComponent(tabSetup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addComponent(lstSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -564,7 +748,7 @@ public class SetupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMessureBeatsKeyReleased
 
     private void btnSSNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSSNextActionPerformed
-        controller.setupNext();
+        controller.nextTab();
     }//GEN-LAST:event_btnSSNextActionPerformed
 
     private void txtTempoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTempoKeyTyped
@@ -574,6 +758,126 @@ public class SetupUI extends javax.swing.JFrame {
     private void txtTempoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTempoKeyReleased
         controller.fieldCheck();
     }//GEN-LAST:event_txtTempoKeyReleased
+
+    private void btnTrebleNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleNextActionPerformed
+        controller.nextTab();
+    }//GEN-LAST:event_btnTrebleNextActionPerformed
+
+    private void btnTrebleWholeNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleWholeNoteActionPerformed
+        controller.addTrebleNote(wholeNote, wholeNoteNum);
+    }//GEN-LAST:event_btnTrebleWholeNoteActionPerformed
+
+    private void btnTrebleHalfNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleHalfNoteActionPerformed
+        controller.addTrebleNote(halfNote, halfNoteNum);
+    }//GEN-LAST:event_btnTrebleHalfNoteActionPerformed
+
+    private void btnTrebleQuarterNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleQuarterNoteActionPerformed
+        controller.addTrebleNote(quarterNote, quarterNoteNum);
+    }//GEN-LAST:event_btnTrebleQuarterNoteActionPerformed
+
+    private void btnTrebleEighthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleEighthNoteActionPerformed
+        controller.addTrebleNote(eighthNote, eighthNoteNum);
+    }//GEN-LAST:event_btnTrebleEighthNoteActionPerformed
+
+    private void btnTrebleSixteenthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleSixteenthNoteActionPerformed
+        controller.addTrebleNote(sixteenthNote, sixteenthNoteNum);
+    }//GEN-LAST:event_btnTrebleSixteenthNoteActionPerformed
+
+    private void btnTrebleThirtysecondNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleThirtysecondNoteActionPerformed
+        controller.addTrebleNote(thirtysecondNote, thirtysecondNoteNum);
+    }//GEN-LAST:event_btnTrebleThirtysecondNoteActionPerformed
+
+    private void btnTrebleIntConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleIntConActionPerformed
+        controller.trebleIntervalMerge();
+    }//GEN-LAST:event_btnTrebleIntConActionPerformed
+
+    private void chkTrebleIntervalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkTrebleIntervalStateChanged
+        controller.buttonUpdate();
+    }//GEN-LAST:event_chkTrebleIntervalStateChanged
+
+    private void btnTrebleWholeRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleWholeRestActionPerformed
+        controller.addRest(wholeRest, wholeRestNum);
+    }//GEN-LAST:event_btnTrebleWholeRestActionPerformed
+
+    private void btnTrebleHalfRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleHalfRestActionPerformed
+        controller.addRest(halfRest, halfRestNum);
+    }//GEN-LAST:event_btnTrebleHalfRestActionPerformed
+
+    private void btnTrebleQuarterRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleQuarterRestActionPerformed
+        controller.addRest(quarterRest, quarterRestNum);
+    }//GEN-LAST:event_btnTrebleQuarterRestActionPerformed
+
+    private void btnTrebleEighthRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleEighthRestActionPerformed
+        controller.addRest(eighthRest, eighthRestNum);
+    }//GEN-LAST:event_btnTrebleEighthRestActionPerformed
+
+    private void btnTrebleSixteenthRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleSixteenthRestActionPerformed
+        controller.addRest(sixteenthRest, sixteenthRestNum);
+    }//GEN-LAST:event_btnTrebleSixteenthRestActionPerformed
+
+    private void btnTrebleThirtysecondRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleThirtysecondRestActionPerformed
+        controller.addRest(thirtysecondRest,thirtysecondRestNum);
+    }//GEN-LAST:event_btnTrebleThirtysecondRestActionPerformed
+
+    private void btnBaseWholeNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseWholeNoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseWholeNoteActionPerformed
+
+    private void btnBaseHalfNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseHalfNoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseHalfNoteActionPerformed
+
+    private void btnBaseQuarterNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseQuarterNoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseQuarterNoteActionPerformed
+
+    private void btnBaseEighthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseEighthNoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseEighthNoteActionPerformed
+
+    private void btnBaseSixteenthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseSixteenthNoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseSixteenthNoteActionPerformed
+
+    private void btnBaseThirtysecondNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseThirtysecondNoteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseThirtysecondNoteActionPerformed
+
+    private void chkBaseIntervalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkBaseIntervalStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkBaseIntervalStateChanged
+
+    private void btnBaseIntConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseIntConActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseIntConActionPerformed
+
+    private void btnWholeRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWholeRest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnWholeRest1ActionPerformed
+
+    private void btnHalfRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHalfRest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHalfRest1ActionPerformed
+
+    private void btnQuarterRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuarterRest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnQuarterRest1ActionPerformed
+
+    private void btnEighthRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthRest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEighthRest1ActionPerformed
+
+    private void btnSixteenthRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixteenthRest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSixteenthRest1ActionPerformed
+
+    private void btnThirtysecondRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirtysecondRest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThirtysecondRest1ActionPerformed
+
+    private void btnBaseNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseNextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaseNextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -611,56 +915,55 @@ public class SetupUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBaseEighthNote;
+    private javax.swing.JButton btnBaseHalfNote;
+    private javax.swing.JButton btnBaseIntCon;
+    private javax.swing.JButton btnBaseNext;
+    private javax.swing.JButton btnBaseQuarterNote;
+    private javax.swing.JButton btnBaseSixteenthNote;
+    private javax.swing.JButton btnBaseThirtysecondNote;
+    private javax.swing.JButton btnBaseWholeNote;
+    private javax.swing.JButton btnEighthRest1;
+    private javax.swing.JButton btnHalfRest1;
+    private javax.swing.JButton btnQuarterRest1;
     private javax.swing.JButton btnSSNext;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JButton btnSixteenthRest1;
+    private javax.swing.JButton btnThirtysecondRest1;
+    private javax.swing.JButton btnTrebleEighthNote;
+    private javax.swing.JButton btnTrebleEighthRest;
+    private javax.swing.JButton btnTrebleHalfNote;
+    private javax.swing.JButton btnTrebleHalfRest;
+    private javax.swing.JButton btnTrebleIntCon;
+    private javax.swing.JButton btnTrebleNext;
+    private javax.swing.JButton btnTrebleQuarterNote;
+    private javax.swing.JButton btnTrebleQuarterRest;
+    private javax.swing.JButton btnTrebleSixteenthNote;
+    private javax.swing.JButton btnTrebleSixteenthRest;
+    private javax.swing.JButton btnTrebleThirtysecondNote;
+    private javax.swing.JButton btnTrebleThirtysecondRest;
+    private javax.swing.JButton btnTrebleWholeNote;
+    private javax.swing.JButton btnTrebleWholeRest;
+    private javax.swing.JButton btnWholeRest1;
+    private javax.swing.JCheckBox chkBaseInterval;
+    private javax.swing.JCheckBox chkBaseTriplet;
+    private javax.swing.JCheckBox chkTrebleInterval;
+    private javax.swing.JCheckBox chkTrebleTriplet;
+    private javax.swing.JComboBox<String> cmbBaseNote;
+    private javax.swing.JComboBox<String> cmbBaseOctave;
+    private javax.swing.JComboBox<String> cmbTrebleNote;
+    private javax.swing.JComboBox<String> cmbTrebleOctave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lblSetupSheet;
+    private java.awt.List lstSoundInfo;
     private javax.swing.JTabbedPane tabSetup;
     private javax.swing.JTextField txtMessureBeats;
     private javax.swing.JTextField txtMessureNum;
