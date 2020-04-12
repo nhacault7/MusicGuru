@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
@@ -18,7 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import ui.MainUI;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * Dialogs.java - a collection of useful methods for working with dialogs
@@ -367,8 +368,12 @@ public class Dialogs
     }
     
     public File[] openFiles(JFrame frame) {
+        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter(
+            "Image files", ImageIO.getReaderFileSuffixes());
+        
         JFileChooser chooser = new JFileChooser(title);
         chooser.setMultiSelectionEnabled(true);
+        chooser.setFileFilter(imageFilter);
         chooser.showOpenDialog(frame);
         File[] files = chooser.getSelectedFiles();
         return files;

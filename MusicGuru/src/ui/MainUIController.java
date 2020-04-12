@@ -26,6 +26,7 @@ public class MainUIController {
     private JSlider speedSlider;
     private JToggleButton metronome;
     private JButton instrumentSelect;
+    private JButton setupSheets;
     private JButton restartPlayback;
     private JToggleButton togglePlayback;
     private JToggleButton loop;
@@ -44,11 +45,15 @@ public class MainUIController {
     private final int speedMin = 1;
     private final int speedMax = 200;
     private final int initialSpeed = 100;
-    private final int volumeMin = 1;
+    private final int volumeMin = 0;
     private final int volumeMax = 100;
+    private final int volumeIconChange = 75;
     private final int initialVolume = 50;
     private final String initialPage = " 0/0 ";
     private final String initialMessage = "Sheets Here";
+    private final Icon muteIcon;
+    private final Icon lowIcon;
+    private final Icon highIcon;
     
     private Dialogs dialog = new Dialogs();
     private File[] files;
@@ -57,11 +62,13 @@ public class MainUIController {
     MainUIController(JLabel sheetMusicLabel, JButton selectSheets, 
             JButton clearSheets, JLabel speed, JButton speedDown, 
             JButton speedUp, JSlider speedSlider, JToggleButton metronome, 
-            JButton instrumentSelect, JButton restartPlayback, 
+            JButton instrumentSelect, JButton setupSheets, JButton restartPlayback, 
             JToggleButton togglePlayback, JToggleButton loop, 
             JToggleButton toggleVolume, JSlider volumeSlider, 
             JButton pageForward, JButton pageBack, JLabel pageNum, 
             MainUI userInterface) {
+        
+        
         
         this.sheetMusicLabel = sheetMusicLabel;
         this.selectSheets = selectSheets;
@@ -72,11 +79,18 @@ public class MainUIController {
         this.speedSlider = speedSlider;
         this.metronome = metronome;
         this.instrumentSelect = instrumentSelect;
+        this.setupSheets = setupSheets;
         this.restartPlayback = restartPlayback;
         this.togglePlayback = togglePlayback;
         this.loop = loop;
         this.toggleVolume = toggleVolume;
         this.volumeSlider = volumeSlider;
+        this.muteIcon = new javax.swing.ImageIcon(getClass().getResource(
+                "/resources/mute.png"));
+        this.lowIcon = new javax.swing.ImageIcon(getClass().getResource(
+                "/resources/low.png"));
+        this.highIcon = new javax.swing.ImageIcon(getClass().getResource(
+                "/resources/high.png"));
         this.pageForward = pageForward;
         this.pageBack = pageBack;
         this.pageNum = pageNum;
@@ -93,8 +107,10 @@ public class MainUIController {
         speedSlider.setMinimum(speedMin);
         speedSlider.setMaximum(speedMax);
         speedSlider.setValue(initialSpeed);
+        speed.setText(initialSpeed + "%");
         metronome.setEnabled(false);
         instrumentSelect.setEnabled(true);
+        setupSheets.setEnabled(false);
         restartPlayback.setEnabled(false);
         togglePlayback.setEnabled(false);
         loop.setEnabled(false);
@@ -130,9 +146,7 @@ public class MainUIController {
         selectSheets.setEnabled(false);
         clearSheets.setEnabled(true);
         metronome.setEnabled(true);
-        restartPlayback.setEnabled(true);
-        togglePlayback.setEnabled(true);
-        loop.setEnabled(true);
+        setupSheets.setEnabled(true);
         pageNum.setText(" " + pageSpot + "/" + displaySheets.size() + " ");
         if (displaySheets.size() > 1) {
             pageForward.setEnabled(true);
@@ -149,6 +163,7 @@ public class MainUIController {
         selectSheets.setEnabled(true);
         clearSheets.setEnabled(false);
         metronome.setEnabled(false);
+        setupSheets.setEnabled(false);
         restartPlayback.setEnabled(false);
         togglePlayback.setEnabled(false);
         loop.setEnabled(false);
@@ -189,6 +204,62 @@ public class MainUIController {
         if(listSpot == 0) {
             pageBack.setEnabled(false);
         }
+    }
+
+    void speedChange() {
+        if (speedSlider.getValue() == speedMin) {
+            speedDown.setEnabled(false);
+        } else {
+            speedDown.setEnabled(true);
+        }     
+        if (speedSlider.getValue() == speedMax) {
+            speedUp.setEnabled(false);
+        } else {
+            speedUp.setEnabled(true);
+        }  
+        
+        speed.setText(speedSlider.getValue() + "%");
+    }
+    
+    void toggleVolume() {
+        if(toggleVolume.isSelected()) {
+            toggleVolume.setIcon(muteIcon);
+        } 
+        
+        if(!toggleVolume.isSelected() &&
+                volumeSlider.getValue() == volumeMin) {
+            volumeSlider.setValue(volumeMin + 1);
+        }
+        
+        if(!toggleVolume.isSelected() && 
+                volumeSlider.getValue() > volumeIconChange) {
+            toggleVolume.setIcon(highIcon);
+        } 
+        else if (!toggleVolume.isSelected() && 
+                volumeSlider.getValue() < volumeIconChange) {
+            toggleVolume.setIcon(lowIcon);
+        }
+        
+    }
+
+    void volumeChange() {
+        toggleVolume.setSelected(false);
+        
+        if (volumeSlider.getValue() == volumeMin) {
+            toggleVolume.setIcon(muteIcon);
+            toggleVolume.setSelected(true);
+        }
+        else if (volumeSlider.getValue() > volumeMin && 
+                volumeSlider.getValue() < volumeIconChange) {
+            toggleVolume.setIcon(lowIcon);
+        }
+        else if (volumeSlider.getValue() > volumeIconChange) {
+            toggleVolume.setIcon(highIcon);
+        }
+    }
+
+    void setupSheets() {
+        new SetupUI(displaySheets);
     }
 
 }
