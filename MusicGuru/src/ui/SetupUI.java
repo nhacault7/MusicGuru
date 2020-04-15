@@ -45,14 +45,23 @@ public class SetupUI extends javax.swing.JFrame {
     
     public SetupUI(LinkedList displaySheets) {
         initComponents();
-        controller = new SetupUIController(displaySheets, tabSetup, 
-                lblSetupSheet, txtMessureNum, txtMessureBeats, txtTempo, 
-                btnSSNext, btnTrebleIntCon, btnTrebleWholeNote, btnTrebleHalfNote, 
-                btnTrebleQuarterNote, btnTrebleEighthNote, btnTrebleSixteenthNote, 
-                btnTrebleThirtysecondNote, btnTrebleWholeRest, btnTrebleHalfRest, btnTrebleQuarterRest, 
-                btnTrebleEighthRest, btnTrebleSixteenthRest, btnTrebleThirtysecondRest, 
-                cmbTrebleNote, cmbTrebleOctave, chkTrebleTriplet, chkTrebleInterval, 
-                btnTrebleNext, lstSoundInfo, this);
+        controller = new SetupUIController(displaySheets, tbdSetup, pnlSetup, 
+                pnlTreble, pnlBass, lblSetupSheet, txtMessureNum, 
+                txtMessureBeats, txtTempo, btnSSNext, btnTrebleIntCon, 
+                btnTrebleWholeNote, btnTrebleHalfNote, btnTrebleQuarterNote, 
+                btnTrebleEighthNote, btnTrebleSixteenthNote, 
+                btnTrebleThirtysecondNote, btnTrebleWholeRest, 
+                btnTrebleHalfRest, btnTrebleQuarterRest, 
+                btnTrebleEighthRest, btnTrebleSixteenthRest, 
+                btnTrebleThirtysecondRest, cmbTrebleNote, cmbTrebleOctave, 
+                chkTrebleTriplet, chkTrebleInterval, btnTrebleNext, 
+                btnBassIntCon, btnBassWholeNote, btnBassHalfNote, 
+                btnBassQuarterNote, btnBassEighthNote, btnBassSixteenthNote,
+                btnBassThirtysecondNote, btnBassWholeRest, btnBassHalfRest, 
+                btnBassQuarterRest, btnBassEighthRest, btnBassSixteenthRest, 
+                btnBassThirtysecondRest, cmbBassNote, cmbBassOctave, 
+                chkBassTriplet, chkBassInterval, btnBassNext, lstSoundInfo,
+                lstTrebleSoundInfo, lstBassSoundInfo, this);
     }
 
     /**
@@ -65,8 +74,8 @@ public class SetupUI extends javax.swing.JFrame {
     private void initComponents() {
 
         lblSetupSheet = new javax.swing.JLabel();
-        tabSetup = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        tbdSetup = new javax.swing.JTabbedPane();
+        pnlSetup = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnSSNext = new javax.swing.JButton();
@@ -74,7 +83,7 @@ public class SetupUI extends javax.swing.JFrame {
         txtMessureNum = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtTempo = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        pnlTreble = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         btnTrebleWholeNote = new javax.swing.JButton();
         btnTrebleHalfNote = new javax.swing.JButton();
@@ -95,28 +104,30 @@ public class SetupUI extends javax.swing.JFrame {
         btnTrebleSixteenthRest = new javax.swing.JButton();
         btnTrebleThirtysecondRest = new javax.swing.JButton();
         btnTrebleNext = new javax.swing.JButton();
-        jPanel8 = new javax.swing.JPanel();
+        pnlBass = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        btnBaseWholeNote = new javax.swing.JButton();
-        btnBaseHalfNote = new javax.swing.JButton();
-        btnBaseQuarterNote = new javax.swing.JButton();
-        btnBaseEighthNote = new javax.swing.JButton();
-        btnBaseSixteenthNote = new javax.swing.JButton();
-        btnBaseThirtysecondNote = new javax.swing.JButton();
-        chkBaseTriplet = new javax.swing.JCheckBox();
-        cmbBaseNote = new javax.swing.JComboBox<>();
-        chkBaseInterval = new javax.swing.JCheckBox();
-        btnBaseIntCon = new javax.swing.JButton();
-        cmbBaseOctave = new javax.swing.JComboBox<>();
+        btnBassWholeNote = new javax.swing.JButton();
+        btnBassHalfNote = new javax.swing.JButton();
+        btnBassQuarterNote = new javax.swing.JButton();
+        btnBassEighthNote = new javax.swing.JButton();
+        btnBassSixteenthNote = new javax.swing.JButton();
+        btnBassThirtysecondNote = new javax.swing.JButton();
+        chkBassTriplet = new javax.swing.JCheckBox();
+        cmbBassNote = new javax.swing.JComboBox<>();
+        chkBassInterval = new javax.swing.JCheckBox();
+        btnBassIntCon = new javax.swing.JButton();
+        cmbBassOctave = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
-        btnWholeRest1 = new javax.swing.JButton();
-        btnHalfRest1 = new javax.swing.JButton();
-        btnQuarterRest1 = new javax.swing.JButton();
-        btnEighthRest1 = new javax.swing.JButton();
-        btnSixteenthRest1 = new javax.swing.JButton();
-        btnThirtysecondRest1 = new javax.swing.JButton();
-        btnBaseNext = new javax.swing.JButton();
+        btnBassWholeRest = new javax.swing.JButton();
+        btnBassHalfRest = new javax.swing.JButton();
+        btnBassQuarterRest = new javax.swing.JButton();
+        btnBassEighthRest = new javax.swing.JButton();
+        btnBassSixteenthRest = new javax.swing.JButton();
+        btnBassThirtysecondRest = new javax.swing.JButton();
+        btnBassNext = new javax.swing.JButton();
+        lstBassSoundInfo = new java.awt.List();
         lstSoundInfo = new java.awt.List();
+        lstTrebleSoundInfo = new java.awt.List();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -124,10 +135,10 @@ public class SetupUI extends javax.swing.JFrame {
         lblSetupSheet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSetupSheet.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        tabSetup.setEnabled(false);
-        tabSetup.setName(""); // NOI18N
+        tbdSetup.setEnabled(false);
+        tbdSetup.setName(""); // NOI18N
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
+        pnlSetup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
         jLabel1.setText("Number of Messures:");
 
@@ -170,47 +181,47 @@ public class SetupUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlSetupLayout = new javax.swing.GroupLayout(pnlSetup);
+        pnlSetup.setLayout(pnlSetupLayout);
+        pnlSetupLayout.setHorizontalGroup(
+            pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSetupLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSetupLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnSSNext))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(pnlSetupLayout.createSequentialGroup()
+                        .addGroup(pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(pnlSetupLayout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addGap(18, 18, 18)
                                     .addComponent(txtMessureBeats, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(pnlSetupLayout.createSequentialGroup()
                                     .addComponent(jLabel1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(txtMessureNum, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(pnlSetupLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(75, 75, 75)
                                 .addComponent(txtTempo)))
                         .addGap(0, 249, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlSetupLayout.setVerticalGroup(
+            pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSetupLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtMessureNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtMessureBeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlSetupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
@@ -218,9 +229,9 @@ public class SetupUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        tabSetup.addTab("Score Setup", jPanel2);
+        tbdSetup.addTab("Score Setup", pnlSetup);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
+        pnlTreble.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Notes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
@@ -267,6 +278,11 @@ public class SetupUI extends javax.swing.JFrame {
         });
 
         chkTrebleTriplet.setText("Triplet");
+        chkTrebleTriplet.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chkTrebleTripletStateChanged(evt);
+            }
+        });
 
         cmbTrebleNote.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
         cmbTrebleNote.setBorder(javax.swing.BorderFactory.createTitledBorder("Note"));
@@ -430,24 +446,24 @@ public class SetupUI extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlTrebleLayout = new javax.swing.GroupLayout(pnlTreble);
+        pnlTreble.setLayout(pnlTrebleLayout);
+        pnlTrebleLayout.setHorizontalGroup(
+            pnlTrebleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTrebleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlTrebleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTrebleLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnTrebleNext)
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+        pnlTrebleLayout.setVerticalGroup(
+            pnlTrebleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTrebleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -457,75 +473,80 @@ public class SetupUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tabSetup.addTab("Treble Clef", jPanel4);
+        tbdSetup.addTab("Treble Clef", pnlTreble);
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
+        pnlBass.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Page 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Notes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
-        btnBaseWholeNote.setText("Whole Note");
-        btnBaseWholeNote.addActionListener(new java.awt.event.ActionListener() {
+        btnBassWholeNote.setText("Whole Note");
+        btnBassWholeNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseWholeNoteActionPerformed(evt);
+                btnBassWholeNoteActionPerformed(evt);
             }
         });
 
-        btnBaseHalfNote.setText("Half Note");
-        btnBaseHalfNote.addActionListener(new java.awt.event.ActionListener() {
+        btnBassHalfNote.setText("Half Note");
+        btnBassHalfNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseHalfNoteActionPerformed(evt);
+                btnBassHalfNoteActionPerformed(evt);
             }
         });
 
-        btnBaseQuarterNote.setText("Quarter Note");
-        btnBaseQuarterNote.addActionListener(new java.awt.event.ActionListener() {
+        btnBassQuarterNote.setText("Quarter Note");
+        btnBassQuarterNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseQuarterNoteActionPerformed(evt);
+                btnBassQuarterNoteActionPerformed(evt);
             }
         });
 
-        btnBaseEighthNote.setText("Eighth Note");
-        btnBaseEighthNote.addActionListener(new java.awt.event.ActionListener() {
+        btnBassEighthNote.setText("Eighth Note");
+        btnBassEighthNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseEighthNoteActionPerformed(evt);
+                btnBassEighthNoteActionPerformed(evt);
             }
         });
 
-        btnBaseSixteenthNote.setText("Sixteenth Note");
-        btnBaseSixteenthNote.addActionListener(new java.awt.event.ActionListener() {
+        btnBassSixteenthNote.setText("Sixteenth Note");
+        btnBassSixteenthNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseSixteenthNoteActionPerformed(evt);
+                btnBassSixteenthNoteActionPerformed(evt);
             }
         });
 
-        btnBaseThirtysecondNote.setText("Thirty-Second Note");
-        btnBaseThirtysecondNote.addActionListener(new java.awt.event.ActionListener() {
+        btnBassThirtysecondNote.setText("Thirty-Second Note");
+        btnBassThirtysecondNote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseThirtysecondNoteActionPerformed(evt);
+                btnBassThirtysecondNoteActionPerformed(evt);
             }
         });
 
-        chkBaseTriplet.setText("Triplet");
-
-        cmbBaseNote.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
-        cmbBaseNote.setBorder(javax.swing.BorderFactory.createTitledBorder("Note"));
-
-        chkBaseInterval.setText("Interval");
-        chkBaseInterval.addChangeListener(new javax.swing.event.ChangeListener() {
+        chkBassTriplet.setText("Triplet");
+        chkBassTriplet.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                chkBaseIntervalStateChanged(evt);
+                chkBassTripletStateChanged(evt);
             }
         });
 
-        btnBaseIntCon.setText("Confirm");
-        btnBaseIntCon.addActionListener(new java.awt.event.ActionListener() {
+        cmbBassNote.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#" }));
+        cmbBassNote.setBorder(javax.swing.BorderFactory.createTitledBorder("Note"));
+
+        chkBassInterval.setText("Interval");
+        chkBassInterval.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chkBassIntervalStateChanged(evt);
+            }
+        });
+
+        btnBassIntCon.setText("Confirm");
+        btnBassIntCon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseIntConActionPerformed(evt);
+                btnBassIntConActionPerformed(evt);
             }
         });
 
-        cmbBaseOctave.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }));
-        cmbBaseOctave.setBorder(javax.swing.BorderFactory.createTitledBorder("Octave"));
+        cmbBassOctave.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }));
+        cmbBassOctave.setBorder(javax.swing.BorderFactory.createTitledBorder("Octave"));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -536,94 +557,94 @@ public class SetupUI extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnBaseWholeNote, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                            .addComponent(btnBaseEighthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnBassWholeNote, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(btnBassEighthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnBaseHalfNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBaseSixteenthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnBassHalfNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBassSixteenthNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnBaseThirtysecondNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBaseQuarterNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btnBassThirtysecondNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBassQuarterNote, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(cmbBaseNote, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbBassNote, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbBaseOctave, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbBassOctave, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(chkBaseTriplet)
+                        .addComponent(chkBassTriplet)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chkBaseInterval)
+                        .addComponent(chkBassInterval)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBaseIntCon)))
+                        .addComponent(btnBassIntCon)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBaseQuarterNote)
-                    .addComponent(btnBaseHalfNote)
-                    .addComponent(btnBaseWholeNote))
+                    .addComponent(btnBassQuarterNote)
+                    .addComponent(btnBassHalfNote)
+                    .addComponent(btnBassWholeNote))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBaseSixteenthNote)
-                    .addComponent(btnBaseThirtysecondNote)
-                    .addComponent(btnBaseEighthNote))
+                    .addComponent(btnBassSixteenthNote)
+                    .addComponent(btnBassThirtysecondNote)
+                    .addComponent(btnBassEighthNote))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cmbBaseOctave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chkBaseTriplet)
-                            .addComponent(chkBaseInterval)
-                            .addComponent(btnBaseIntCon)))
-                    .addComponent(cmbBaseNote, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(cmbBassOctave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkBassTriplet)
+                            .addComponent(chkBassInterval)
+                            .addComponent(btnBassIntCon)))
+                    .addComponent(cmbBassNote, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rests", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gadugi", 1, 14))); // NOI18N
 
-        btnWholeRest1.setText("Whole Rest");
-        btnWholeRest1.addActionListener(new java.awt.event.ActionListener() {
+        btnBassWholeRest.setText("Whole Rest");
+        btnBassWholeRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnWholeRest1ActionPerformed(evt);
+                btnBassWholeRestActionPerformed(evt);
             }
         });
 
-        btnHalfRest1.setText("Half Rest");
-        btnHalfRest1.addActionListener(new java.awt.event.ActionListener() {
+        btnBassHalfRest.setText("Half Rest");
+        btnBassHalfRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHalfRest1ActionPerformed(evt);
+                btnBassHalfRestActionPerformed(evt);
             }
         });
 
-        btnQuarterRest1.setText("Quarter Rest");
-        btnQuarterRest1.addActionListener(new java.awt.event.ActionListener() {
+        btnBassQuarterRest.setText("Quarter Rest");
+        btnBassQuarterRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQuarterRest1ActionPerformed(evt);
+                btnBassQuarterRestActionPerformed(evt);
             }
         });
 
-        btnEighthRest1.setText("Eighth Rest");
-        btnEighthRest1.addActionListener(new java.awt.event.ActionListener() {
+        btnBassEighthRest.setText("Eighth Rest");
+        btnBassEighthRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEighthRest1ActionPerformed(evt);
+                btnBassEighthRestActionPerformed(evt);
             }
         });
 
-        btnSixteenthRest1.setText("Sixteenth Rest");
-        btnSixteenthRest1.addActionListener(new java.awt.event.ActionListener() {
+        btnBassSixteenthRest.setText("Sixteenth Rest");
+        btnBassSixteenthRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSixteenthRest1ActionPerformed(evt);
+                btnBassSixteenthRestActionPerformed(evt);
             }
         });
 
-        btnThirtysecondRest1.setText("Thirty-Second Rest");
-        btnThirtysecondRest1.addActionListener(new java.awt.event.ActionListener() {
+        btnBassThirtysecondRest.setText("Thirty-Second Rest");
+        btnBassThirtysecondRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnThirtysecondRest1ActionPerformed(evt);
+                btnBassThirtysecondRestActionPerformed(evt);
             }
         });
 
@@ -634,71 +655,75 @@ public class SetupUI extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnWholeRest1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addComponent(btnEighthRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBassWholeRest, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                    .addComponent(btnBassEighthRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnHalfRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSixteenthRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBassHalfRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBassSixteenthRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnThirtysecondRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnQuarterRest1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBassThirtysecondRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBassQuarterRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnQuarterRest1)
-                    .addComponent(btnHalfRest1)
-                    .addComponent(btnWholeRest1))
+                    .addComponent(btnBassQuarterRest)
+                    .addComponent(btnBassHalfRest)
+                    .addComponent(btnBassWholeRest))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSixteenthRest1)
-                    .addComponent(btnThirtysecondRest1)
-                    .addComponent(btnEighthRest1))
+                    .addComponent(btnBassSixteenthRest)
+                    .addComponent(btnBassThirtysecondRest)
+                    .addComponent(btnBassEighthRest))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnBaseNext.setText("Next");
-        btnBaseNext.setEnabled(false);
-        btnBaseNext.addActionListener(new java.awt.event.ActionListener() {
+        btnBassNext.setText("Next");
+        btnBassNext.setEnabled(false);
+        btnBassNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaseNextActionPerformed(evt);
+                btnBassNextActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBassLayout = new javax.swing.GroupLayout(pnlBass);
+        pnlBass.setLayout(pnlBassLayout);
+        pnlBassLayout.setHorizontalGroup(
+            pnlBassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBassLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlBassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBassLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBaseNext)
+                .addComponent(btnBassNext)
                 .addContainerGap())
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+        pnlBassLayout.setVerticalGroup(
+            pnlBassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBassLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBaseNext)
+                .addComponent(btnBassNext)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tabSetup.addTab("Base Clef", jPanel8);
+        tbdSetup.addTab("Base Clef", pnlBass);
+
+        lstBassSoundInfo.setName(""); // NOI18N
 
         lstSoundInfo.setName(""); // NOI18N
+
+        lstTrebleSoundInfo.setName(""); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -706,9 +731,14 @@ public class SetupUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tabSetup, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lstSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tbdSetup, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lstBassSoundInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                            .addComponent(lstTrebleSoundInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lstSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(lblSetupSheet, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -720,13 +750,18 @@ public class SetupUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblSetupSheet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tabSetup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tbdSetup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(lstSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lstSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lstTrebleSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lstBassSoundInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
 
-        tabSetup.getAccessibleContext().setAccessibleName("tab 1");
+        tbdSetup.getAccessibleContext().setAccessibleName("tab 1");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -748,7 +783,8 @@ public class SetupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMessureBeatsKeyReleased
 
     private void btnSSNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSSNextActionPerformed
-        controller.nextTab();
+        boolean pageFinish = false;
+        controller.nextTab(pageFinish);
     }//GEN-LAST:event_btnSSNextActionPerformed
 
     private void txtTempoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTempoKeyTyped
@@ -760,7 +796,8 @@ public class SetupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTempoKeyReleased
 
     private void btnTrebleNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleNextActionPerformed
-        controller.nextTab();
+        boolean pageFinish = false;
+        controller.nextTab(pageFinish);
     }//GEN-LAST:event_btnTrebleNextActionPerformed
 
     private void btnTrebleWholeNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleWholeNoteActionPerformed
@@ -788,96 +825,105 @@ public class SetupUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTrebleThirtysecondNoteActionPerformed
 
     private void btnTrebleIntConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleIntConActionPerformed
-        controller.trebleIntervalMerge();
+        controller.trebleMerge();
     }//GEN-LAST:event_btnTrebleIntConActionPerformed
 
     private void chkTrebleIntervalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkTrebleIntervalStateChanged
-        controller.buttonUpdate();
+        controller.trebleButtonUpdate();
     }//GEN-LAST:event_chkTrebleIntervalStateChanged
 
     private void btnTrebleWholeRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleWholeRestActionPerformed
-        controller.addRest(wholeRest, wholeRestNum);
+        controller.addTrebleRest(wholeRest, wholeRestNum);
     }//GEN-LAST:event_btnTrebleWholeRestActionPerformed
 
     private void btnTrebleHalfRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleHalfRestActionPerformed
-        controller.addRest(halfRest, halfRestNum);
+        controller.addTrebleRest(halfRest, halfRestNum);
     }//GEN-LAST:event_btnTrebleHalfRestActionPerformed
 
     private void btnTrebleQuarterRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleQuarterRestActionPerformed
-        controller.addRest(quarterRest, quarterRestNum);
+        controller.addTrebleRest(quarterRest, quarterRestNum);
     }//GEN-LAST:event_btnTrebleQuarterRestActionPerformed
 
     private void btnTrebleEighthRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleEighthRestActionPerformed
-        controller.addRest(eighthRest, eighthRestNum);
+        controller.addTrebleRest(eighthRest, eighthRestNum);
     }//GEN-LAST:event_btnTrebleEighthRestActionPerformed
 
     private void btnTrebleSixteenthRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleSixteenthRestActionPerformed
-        controller.addRest(sixteenthRest, sixteenthRestNum);
+        controller.addTrebleRest(sixteenthRest, sixteenthRestNum);
     }//GEN-LAST:event_btnTrebleSixteenthRestActionPerformed
 
     private void btnTrebleThirtysecondRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrebleThirtysecondRestActionPerformed
-        controller.addRest(thirtysecondRest,thirtysecondRestNum);
+        controller.addTrebleRest(thirtysecondRest,thirtysecondRestNum);
     }//GEN-LAST:event_btnTrebleThirtysecondRestActionPerformed
 
-    private void btnBaseWholeNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseWholeNoteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseWholeNoteActionPerformed
+    private void btnBassWholeNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassWholeNoteActionPerformed
+        controller.addBassNote(wholeNote, wholeNoteNum);
+    }//GEN-LAST:event_btnBassWholeNoteActionPerformed
 
-    private void btnBaseHalfNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseHalfNoteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseHalfNoteActionPerformed
+    private void btnBassHalfNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassHalfNoteActionPerformed
+        controller.addBassNote(halfNote, halfNoteNum);
+    }//GEN-LAST:event_btnBassHalfNoteActionPerformed
 
-    private void btnBaseQuarterNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseQuarterNoteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseQuarterNoteActionPerformed
+    private void btnBassQuarterNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassQuarterNoteActionPerformed
+        controller.addBassNote(quarterNote, quarterNoteNum);
+    }//GEN-LAST:event_btnBassQuarterNoteActionPerformed
 
-    private void btnBaseEighthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseEighthNoteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseEighthNoteActionPerformed
+    private void btnBassEighthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassEighthNoteActionPerformed
+        controller.addBassNote(eighthNote, eighthNoteNum);
+    }//GEN-LAST:event_btnBassEighthNoteActionPerformed
 
-    private void btnBaseSixteenthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseSixteenthNoteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseSixteenthNoteActionPerformed
+    private void btnBassSixteenthNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassSixteenthNoteActionPerformed
+        controller.addBassNote(sixteenthNote, sixteenthNoteNum);
+    }//GEN-LAST:event_btnBassSixteenthNoteActionPerformed
 
-    private void btnBaseThirtysecondNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseThirtysecondNoteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseThirtysecondNoteActionPerformed
+    private void btnBassThirtysecondNoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassThirtysecondNoteActionPerformed
+        controller.addBassNote(thirtysecondNote, thirtysecondNoteNum);
+    }//GEN-LAST:event_btnBassThirtysecondNoteActionPerformed
 
-    private void chkBaseIntervalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkBaseIntervalStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_chkBaseIntervalStateChanged
+    private void chkBassIntervalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkBassIntervalStateChanged
+        controller.bassButtonUpdate();
+    }//GEN-LAST:event_chkBassIntervalStateChanged
 
-    private void btnBaseIntConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseIntConActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseIntConActionPerformed
+    private void btnBassIntConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassIntConActionPerformed
+        controller.bassMerge();
+    }//GEN-LAST:event_btnBassIntConActionPerformed
 
-    private void btnWholeRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWholeRest1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnWholeRest1ActionPerformed
+    private void btnBassWholeRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassWholeRestActionPerformed
+        controller.addBassRest(wholeRest, wholeRestNum);
+    }//GEN-LAST:event_btnBassWholeRestActionPerformed
 
-    private void btnHalfRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHalfRest1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHalfRest1ActionPerformed
+    private void btnBassHalfRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassHalfRestActionPerformed
+        controller.addBassRest(halfRest, halfRestNum);
+    }//GEN-LAST:event_btnBassHalfRestActionPerformed
 
-    private void btnQuarterRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuarterRest1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnQuarterRest1ActionPerformed
+    private void btnBassQuarterRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassQuarterRestActionPerformed
+        controller.addBassRest(quarterRest, quarterRestNum);
+    }//GEN-LAST:event_btnBassQuarterRestActionPerformed
 
-    private void btnEighthRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEighthRest1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEighthRest1ActionPerformed
+    private void btnBassEighthRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassEighthRestActionPerformed
+        controller.addBassRest(eighthRest, eighthRestNum);
+    }//GEN-LAST:event_btnBassEighthRestActionPerformed
 
-    private void btnSixteenthRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixteenthRest1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSixteenthRest1ActionPerformed
+    private void btnBassSixteenthRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassSixteenthRestActionPerformed
+        controller.addBassRest(sixteenthRest, sixteenthRestNum);
+    }//GEN-LAST:event_btnBassSixteenthRestActionPerformed
 
-    private void btnThirtysecondRest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThirtysecondRest1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnThirtysecondRest1ActionPerformed
+    private void btnBassThirtysecondRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassThirtysecondRestActionPerformed
+        controller.addBassRest(thirtysecondRest, thirtysecondRestNum);
+    }//GEN-LAST:event_btnBassThirtysecondRestActionPerformed
 
-    private void btnBaseNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaseNextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBaseNextActionPerformed
+    private void btnBassNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBassNextActionPerformed
+        boolean pageFinish = true;
+        controller.nextTab(pageFinish);
+    }//GEN-LAST:event_btnBassNextActionPerformed
+
+    private void chkTrebleTripletStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkTrebleTripletStateChanged
+        controller.trebleButtonUpdate();
+    }//GEN-LAST:event_chkTrebleTripletStateChanged
+
+    private void chkBassTripletStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chkBassTripletStateChanged
+        controller.bassButtonUpdate();
+    }//GEN-LAST:event_chkBassTripletStateChanged
 
     /**
      * @param args the command line arguments
@@ -915,20 +961,21 @@ public class SetupUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBaseEighthNote;
-    private javax.swing.JButton btnBaseHalfNote;
-    private javax.swing.JButton btnBaseIntCon;
-    private javax.swing.JButton btnBaseNext;
-    private javax.swing.JButton btnBaseQuarterNote;
-    private javax.swing.JButton btnBaseSixteenthNote;
-    private javax.swing.JButton btnBaseThirtysecondNote;
-    private javax.swing.JButton btnBaseWholeNote;
-    private javax.swing.JButton btnEighthRest1;
-    private javax.swing.JButton btnHalfRest1;
-    private javax.swing.JButton btnQuarterRest1;
+    private javax.swing.JButton btnBassEighthNote;
+    private javax.swing.JButton btnBassEighthRest;
+    private javax.swing.JButton btnBassHalfNote;
+    private javax.swing.JButton btnBassHalfRest;
+    private javax.swing.JButton btnBassIntCon;
+    private javax.swing.JButton btnBassNext;
+    private javax.swing.JButton btnBassQuarterNote;
+    private javax.swing.JButton btnBassQuarterRest;
+    private javax.swing.JButton btnBassSixteenthNote;
+    private javax.swing.JButton btnBassSixteenthRest;
+    private javax.swing.JButton btnBassThirtysecondNote;
+    private javax.swing.JButton btnBassThirtysecondRest;
+    private javax.swing.JButton btnBassWholeNote;
+    private javax.swing.JButton btnBassWholeRest;
     private javax.swing.JButton btnSSNext;
-    private javax.swing.JButton btnSixteenthRest1;
-    private javax.swing.JButton btnThirtysecondRest1;
     private javax.swing.JButton btnTrebleEighthNote;
     private javax.swing.JButton btnTrebleEighthRest;
     private javax.swing.JButton btnTrebleHalfNote;
@@ -943,28 +990,29 @@ public class SetupUI extends javax.swing.JFrame {
     private javax.swing.JButton btnTrebleThirtysecondRest;
     private javax.swing.JButton btnTrebleWholeNote;
     private javax.swing.JButton btnTrebleWholeRest;
-    private javax.swing.JButton btnWholeRest1;
-    private javax.swing.JCheckBox chkBaseInterval;
-    private javax.swing.JCheckBox chkBaseTriplet;
+    private javax.swing.JCheckBox chkBassInterval;
+    private javax.swing.JCheckBox chkBassTriplet;
     private javax.swing.JCheckBox chkTrebleInterval;
     private javax.swing.JCheckBox chkTrebleTriplet;
-    private javax.swing.JComboBox<String> cmbBaseNote;
-    private javax.swing.JComboBox<String> cmbBaseOctave;
+    private javax.swing.JComboBox<String> cmbBassNote;
+    private javax.swing.JComboBox<String> cmbBassOctave;
     private javax.swing.JComboBox<String> cmbTrebleNote;
     private javax.swing.JComboBox<String> cmbTrebleOctave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lblSetupSheet;
+    private java.awt.List lstBassSoundInfo;
     private java.awt.List lstSoundInfo;
-    private javax.swing.JTabbedPane tabSetup;
+    private java.awt.List lstTrebleSoundInfo;
+    private javax.swing.JPanel pnlBass;
+    private javax.swing.JPanel pnlSetup;
+    private javax.swing.JPanel pnlTreble;
+    private javax.swing.JTabbedPane tbdSetup;
     private javax.swing.JTextField txtMessureBeats;
     private javax.swing.JTextField txtMessureNum;
     private javax.swing.JTextField txtTempo;

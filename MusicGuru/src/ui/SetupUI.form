@@ -26,9 +26,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tabSetup" min="-2" pref="443" max="-2" attributes="0"/>
-                  <Component id="lstSoundInfo" min="-2" pref="215" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="tbdSetup" min="-2" pref="443" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lstBassSoundInfo" pref="194" max="32767" attributes="0"/>
+                          <Component id="lstTrebleSoundInfo" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lstSoundInfo" min="-2" pref="215" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblSetupSheet" min="-2" pref="511" max="-2" attributes="0"/>
@@ -43,9 +50,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblSetupSheet" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="tabSetup" min="-2" max="-2" attributes="0"/>
+                      <Component id="tbdSetup" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="24" max="32767" attributes="0"/>
-                      <Component id="lstSoundInfo" min="-2" pref="346" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lstSoundInfo" min="-2" pref="346" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="lstTrebleSoundInfo" min="-2" pref="168" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="lstBassSoundInfo" min="-2" pref="168" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -64,7 +78,7 @@
         </Property>
       </Properties>
     </Component>
-    <Container class="javax.swing.JTabbedPane" name="tabSetup">
+    <Container class="javax.swing.JTabbedPane" name="tbdSetup">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
@@ -75,7 +89,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="pnlSetup">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -200,7 +214,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel4">
+        <Container class="javax.swing.JPanel" name="pnlTreble">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -385,6 +399,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Triplet"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chkTrebleTripletStateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cmbTrebleNote">
                   <Properties>
@@ -572,7 +589,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel8">
+        <Container class="javax.swing.JPanel" name="pnlBass">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -603,7 +620,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnBaseNext" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnBassNext" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -616,7 +633,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnBaseNext" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnBassNext" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -642,30 +659,30 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="btnBaseWholeNote" alignment="1" pref="97" max="32767" attributes="0"/>
-                                      <Component id="btnBaseEighthNote" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="btnBassWholeNote" alignment="1" pref="97" max="32767" attributes="0"/>
+                                      <Component id="btnBassEighthNote" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="btnBaseHalfNote" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btnBaseSixteenthNote" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnBassHalfNote" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnBassSixteenthNote" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="btnBaseThirtysecondNote" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btnBaseQuarterNote" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnBassThirtysecondNote" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="btnBassQuarterNote" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cmbBaseNote" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="cmbBassNote" min="-2" pref="55" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cmbBaseOctave" min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="cmbBassOctave" min="-2" pref="54" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="chkBaseTriplet" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBassTriplet" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="chkBaseInterval" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBassInterval" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnBaseIntCon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnBassIntCon" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -676,28 +693,28 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnBaseQuarterNote" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnBaseHalfNote" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnBaseWholeNote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassQuarterNote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassHalfNote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassWholeNote" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnBaseSixteenthNote" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnBaseThirtysecondNote" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnBaseEighthNote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassSixteenthNote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassThirtysecondNote" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassEighthNote" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cmbBaseOctave" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="chkBaseTriplet" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="chkBaseInterval" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnBaseIntCon" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cmbBassOctave" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkBassTriplet" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkBassInterval" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnBassIntCon" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="cmbBaseNote" alignment="1" max="32767" attributes="0"/>
+                              <Component id="cmbBassNote" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -705,60 +722,63 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnBaseWholeNote">
+                <Component class="javax.swing.JButton" name="btnBassWholeNote">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Whole Note"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseWholeNoteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassWholeNoteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnBaseHalfNote">
+                <Component class="javax.swing.JButton" name="btnBassHalfNote">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Half Note"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseHalfNoteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassHalfNoteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnBaseQuarterNote">
+                <Component class="javax.swing.JButton" name="btnBassQuarterNote">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Quarter Note"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseQuarterNoteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassQuarterNoteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnBaseEighthNote">
+                <Component class="javax.swing.JButton" name="btnBassEighthNote">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eighth Note"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseEighthNoteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassEighthNoteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnBaseSixteenthNote">
+                <Component class="javax.swing.JButton" name="btnBassSixteenthNote">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sixteenth Note"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseSixteenthNoteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassSixteenthNoteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnBaseThirtysecondNote">
+                <Component class="javax.swing.JButton" name="btnBassThirtysecondNote">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Thirty-Second Note"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseThirtysecondNoteActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassThirtysecondNoteActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="chkBaseTriplet">
+                <Component class="javax.swing.JCheckBox" name="chkBassTriplet">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Triplet"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chkBassTripletStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cmbBaseNote">
+                <Component class="javax.swing.JComboBox" name="cmbBassNote">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="12">
@@ -786,23 +806,23 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="chkBaseInterval">
+                <Component class="javax.swing.JCheckBox" name="chkBassInterval">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Interval"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chkBaseIntervalStateChanged"/>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chkBassIntervalStateChanged"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnBaseIntCon">
+                <Component class="javax.swing.JButton" name="btnBassIntCon">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Confirm"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseIntConActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassIntConActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="cmbBaseOctave">
+                <Component class="javax.swing.JComboBox" name="cmbBassOctave">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="9">
@@ -846,18 +866,18 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnWholeRest1" alignment="1" pref="97" max="32767" attributes="0"/>
-                              <Component id="btnEighthRest1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btnBassWholeRest" alignment="1" pref="97" max="32767" attributes="0"/>
+                              <Component id="btnBassEighthRest" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnHalfRest1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnSixteenthRest1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnBassHalfRest" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnBassSixteenthRest" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnThirtysecondRest1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnQuarterRest1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnBassThirtysecondRest" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnBassQuarterRest" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="12" max="32767" attributes="0"/>
                       </Group>
@@ -867,15 +887,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnQuarterRest1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnHalfRest1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnWholeRest1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassQuarterRest" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassHalfRest" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassWholeRest" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnSixteenthRest1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnThirtysecondRest1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnEighthRest1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassSixteenthRest" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassThirtysecondRest" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBassEighthRest" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -883,70 +903,80 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnWholeRest1">
+                <Component class="javax.swing.JButton" name="btnBassWholeRest">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Whole Rest"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnWholeRest1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassWholeRestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnHalfRest1">
+                <Component class="javax.swing.JButton" name="btnBassHalfRest">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Half Rest"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHalfRest1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassHalfRestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnQuarterRest1">
+                <Component class="javax.swing.JButton" name="btnBassQuarterRest">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Quarter Rest"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQuarterRest1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassQuarterRestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnEighthRest1">
+                <Component class="javax.swing.JButton" name="btnBassEighthRest">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eighth Rest"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEighthRest1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassEighthRestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnSixteenthRest1">
+                <Component class="javax.swing.JButton" name="btnBassSixteenthRest">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Sixteenth Rest"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSixteenthRest1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassSixteenthRestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnThirtysecondRest1">
+                <Component class="javax.swing.JButton" name="btnBassThirtysecondRest">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Thirty-Second Rest"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThirtysecondRest1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassThirtysecondRestActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnBaseNext">
+            <Component class="javax.swing.JButton" name="btnBassNext">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Next"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBaseNextActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBassNextActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
+    <Component class="java.awt.List" name="lstBassSoundInfo">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+      </Properties>
+    </Component>
     <Component class="java.awt.List" name="lstSoundInfo">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.List" name="lstTrebleSoundInfo">
       <Properties>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
